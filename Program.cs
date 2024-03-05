@@ -2,8 +2,6 @@
 
 string? path = Path.GetPathRoot(Environment.SystemDirectory);
 
-//path = (directory.FullName).Substring(0, directory.FullName.LastIndexOf("\\"));
-
 while (true)
 {
     Console.WriteLine("Введите команду (чтобы увидеть список доступных команд, введите \"getinfo\"):");
@@ -398,38 +396,6 @@ while (true)
                 ShowError("Проверьте правильность ввода команды!");
             }
         }
-        /*
-        else if (inputParts[0].ToLower() == "copydir")
-        {
-            string oldPath = "";
-            if (inputParts.Length == 3)
-            {
-                if (Path.IsPathRooted(inputParts[1]))
-                {
-                    oldPath = Path.GetFullPath(inputParts[1]);
-                }
-                else if (!Path.IsPathRooted(inputParts[1]))
-                {
-                    oldPath = Path.Combine(path, inputParts[1]);
-                }
-                DirectoryInfo directory = new DirectoryInfo(oldPath);
-                string newPath = Path.Combine(Path.GetFullPath(inputParts[2]), directory.Name);
-                if (directory.Exists && !Directory.Exists(newPath))
-                {
-                    directory.MoveTo(newPath);
-                    Console.WriteLine("Перемещение выполнено.");
-                }
-                else
-                {
-                    ShowError($"Перемещение не выполнено. Папка {directory.Name} не существует или в конечном расположении уже есть папка с именем {directory.Name}.");
-                }
-            }
-            else
-            {
-                ShowError("Проверьте правильность ввода команды!");
-            }
-        }
-        */
         else if (inputParts[0].ToLower() == "copyfile")
         {
             string oldPath = "";
